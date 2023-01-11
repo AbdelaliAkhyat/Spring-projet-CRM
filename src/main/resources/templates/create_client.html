@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Gestion de la relation client CRM</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Gestion de la relation client CRM</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/clients}">Client Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+    <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class = "text-center"> Créer un nouveau client </h1>
+      <div class = "card-body">
+        <form th:action="@{/clients}" th:object = "${client}" method="POST">
+          <div class ="form-group">
+            <label> Compagnie </label>
+            <input
+                    type = "text"
+                    name = "companyName"
+                    th:field = "*{companyName}"
+                    class = "form-control"
+                    placeholder="Entrer le nom de la compagnie de client"
+            />
+          </div>
+          <div class ="form-group">
+            <label> Nom </label>
+            <input
+                    type = "text"
+                    name = "firstName"
+                    th:field = "*{firstName}"
+                    class = "form-control"
+                    placeholder="Entrer le nom de client"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Prénom </label>
+            <input
+                    type = "text"
+                    name = "lastName"
+                    th:field = "*{lastName}"
+                    class = "form-control"
+                    placeholder="Entrer le prénom de client"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Email </label>
+            <input
+                    type = "text"
+                    name = "email"
+                    th:field = "*{email}"
+                    class = "form-control"
+                    placeholder="Email"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Téléphone </label>
+            <input
+                    type = "text"
+                    name = "phone"
+                    th:field = "*{phone}"
+                    class = "form-control"
+                    placeholder="Numèro de téléphone"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Adresse </label>
+            <input
+                    type = "text"
+                    name = "address"
+                    th:field = "*{address}"
+                    class = "form-control"
+                    placeholder="Adresse"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Code Postal </label>
+            <input
+                    type = "text"
+                    name = "zipCode"
+                    th:field = "*{zipCode}"
+                    class = "form-control"
+                    placeholder="Code postal"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Ville </label>
+            <input
+                    type = "text"
+                    name = "city"
+                    th:field = "*{city}"
+                    class = "form-control"
+                    placeholder="Ville"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Pays </label>
+            <input
+                    type = "text"
+                    name = "country"
+                    th:field = "*{country}"
+                    class = "form-control"
+                    placeholder="Pays"
+            />
+          </div>
+
+          <div class ="form-group">
+            <label> Pays </label>
+            <input
+                    type = "text"
+                    name = "state"
+                    th:field = "*{state}"
+                    class = "form-control"
+                    placeholder="Etat de client (ACTIVE/INACTIVE)"
+            />
+          </div>
+
+          <div class = "box-footer">
+            <button type="submit" class = "btn btn-primary">
+              Ajouter
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

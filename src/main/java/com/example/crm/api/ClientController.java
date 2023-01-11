@@ -47,10 +47,11 @@ public class ClientController {
     @PutMapping("clients/{id}")
     public ResponseEntity updateClient(@PathVariable Integer id, @RequestBody Client client){
         if(id.equals(client.getId())){
+            System.out.println(client.getId());
             crmService.updateClient(id, client);
             return ResponseEntity.ok().build();
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         }
     }
 

@@ -46,10 +46,11 @@ public class OrderController {
     @PutMapping("orders/{id}")
     public ResponseEntity updateOrder(@PathVariable Integer id, @RequestBody Order order){
         if(id.equals(order.getId())){
+            System.out.println(order.getId());
             crmService.updateOrder(id, order);
             return ResponseEntity.ok().build();
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         }
     }
 

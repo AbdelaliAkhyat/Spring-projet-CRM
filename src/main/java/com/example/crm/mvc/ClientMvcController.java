@@ -24,7 +24,6 @@ public class ClientMvcController {
         List<Client> clients = crmService.getClients();
         model.addAttribute("clients", clients);
 
-
         return "clients";
     }
 
